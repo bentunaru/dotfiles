@@ -42,7 +42,7 @@ ZSH_THEME="spaceship"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
@@ -74,6 +74,8 @@ plugins=(
 	git
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+  colored-man-pages 
+  colorize
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -101,13 +103,30 @@ export LANG=en_US.UTF-8
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias unix="/Users/benjamin/Documents/shell-color-scripts/colorscripts/unix"
 alias coin="curl rate.sx"
 alias cs="/Users/benjamin/Documents/shell-color-scripts/colorscript.sh --random"
+alias dotfiles='/usr/bin/git --git-dir=/Users/benjamin/.dotfiles/ --work-tree=/Users/benjamin'
 
 /Users/benjamin/Documents/shell-color-scripts/colorscript.sh --random
 
+# FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-alias dotfiles='/usr/bin/git --git-dir=/Users/benjamin/.dotfiles/ --work-tree=/Users/benjamin'
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/benjamin/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/benjamin/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/benjamin/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/benjamin/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
