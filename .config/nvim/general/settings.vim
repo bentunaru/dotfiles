@@ -59,4 +59,5 @@ let g:startify_session_autoload = 1
 
 " Set Python3
 let g:python3_host_prog = expand("/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages")
+"let g:python3_host_prog = expand("/opt/homebrew/bin/python3")
 
